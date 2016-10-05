@@ -73,7 +73,14 @@
 			$notice = "Sellise emailiga ".$email." kasutajat ei ole olemas";
 		}
 		
+		
+		$stmt->close();
+		$mysqli->close();
+		
 		return $notice;
+		
+		
+		
 		
 		
 	}
