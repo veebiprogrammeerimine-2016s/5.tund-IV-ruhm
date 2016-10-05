@@ -1,4 +1,6 @@
 <?php 
+
+	require("../../../config.php");
 	
 	// see fail peab olema siis seotud kõigiga kus
 	// tahame sessiooni kasutada
@@ -85,6 +87,24 @@
 		
 	}
 	
+	
+	
+	function saveEvent($age, $color) {
+		
+		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $GLOBALS["database"]);
+		
+		$stmt = $mysqli->prepare("INSERT INTO whistle (age, color) VALUE (?, ?)");
+		echo $mysqli->error;
+		
+		$stmt->bind_param("is", $age, $color);
+		
+		if ( $stmt->execute() ) {
+			echo "õnnestus";
+		} else {
+			echo "ERROR ".$stmt->error;
+		}
+		
+	}
 	
 	
 	

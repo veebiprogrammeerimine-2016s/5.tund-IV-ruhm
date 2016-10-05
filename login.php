@@ -2,7 +2,7 @@
 	var_dump($_POST);
 	var_dump(isset($_POST["signupEmail"]));
 	
-	require("../../../config.php");
+	
 	require("functions.php");
 	
 	// kui on sisseloginud siis suunan data lehele

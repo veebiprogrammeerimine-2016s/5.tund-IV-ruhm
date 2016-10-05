@@ -18,6 +18,14 @@
 	}
 	
 	
+	if ( isset($_POST["age"]) && 
+		 isset($_POST["color"]) && 
+		 !empty($_POST["age"]) &&
+		 !empty($_POST["color"]) 
+	) {
+		saveEvent($_POST["age"], $_POST["color"]);
+	}
+	
 
 ?>
 <h1>Data</h1>
