@@ -8,6 +8,7 @@
 	// kui on sisseloginud siis suunan data lehele
 	if (isset($_SESSION["userId"])) {
 		header("Location: data.php");
+		exit();
 	}
 	
 	//var_dump($_GET);
@@ -125,7 +126,7 @@
 	</head>
 	<body>
 
-		<h1>Logi sisse</h1>
+		<h1>Logi sisse &lt;a href="#"&gt;</h1>
 		<p style="color:red;"><?=$notice;?></p>
 		<form method="POST" >
 			
